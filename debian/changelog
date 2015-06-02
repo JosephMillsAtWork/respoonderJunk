@@ -1,0 +1,12 @@
+mangoresonder (0.0.1-2) UNRELEASED; urgency=medium
+  
+  * adding the qt5 selector to the d/rules for building
+  * fixing the packaging and adding in a better init script
+
+ -- Joseph Mills <josephjamesmills@gmail.com>  Tue, 02 Jun 2015 13:06:35 -0600
+
+mangoresonder (0.0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Joseph Mills <josephjamesmills@gmail.com>  Thu, 12 Feb 2015 13:25:42 -0700

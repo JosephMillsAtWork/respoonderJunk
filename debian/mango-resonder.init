@@ -1,0 +1,35 @@
+#!/bin/sh
+# chkconfig: 235 99 10
+# description: Mango Responder Find mangoES
+### BEGIN INIT INFO
+# Provides: mangoresonder
+# Required-Start: $network $syslog
+# Required-Stop: $network
+# Default-Start: 2 3 5
+# Default-Stop: 0 1 6
+# Description: Start or stop the mango resonder
+### END INIT INFO
+start="/usr/sbin/mangoresonder"
+lockfile="/var/lock/subsys/mangoresonder"
+name='Mango Responder'
+case "$1" in
+'start')
+        $start >/dev/null 2>&1 </dev/null
+        RETVAL=$?
+        if [ "$RETVAL" = "0" ]; then
+                touch $lockfile >/dev/null 2>&1
+        fi
+        ;;
+'stop')
+        killall mangoresonder;
+        RETVAL=$?
+        if [ "$RETVAL" = "0" ]; then
+                rm -f $lockfile
+        fi
+        ;;
+*)
+        echo "Usage: sudo service  { start | stop | restart | reload | condrestart}"
+        RETVAL=1
+        ;;
+esac
+exit $RETVAL

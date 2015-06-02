@@ -1,0 +1,44 @@
+Source: mangoresonder
+Section: utils
+Priority: optional
+Maintainer: Joseph Mills <josephjamesmills@gmail.com>
+Build-Depends: debhelper (>= 9),
+               libavahi-compat-libdnssd-dev,
+               libqt5core5a,
+               libqt5gui5,
+               libqt5multimedia5,
+               libqt5network5,
+               libqt5qml5,
+               libqt5scripttools5,
+               libqt5sql5-sqlite,
+               libqt5widgets5,
+               qt5-qmake
+Standards-Version: 3.9.5
+
+Package: mangoresonder
+Architecture: any
+Depends: libavahi-compat-libdnssd-dev,
+         libqt5core5a,
+         libqt5network5,
+         libqt5gui5,
+         libqt5widgets5,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Register a mangoES to avahi/bonjour zeroconf
+ Avahi is a free zero-configuration networking (zeroconf) implementation,
+ including a system for multicast DNS/DNS-SD service discovery. It is
+ licensed under the
+ .
+ GNU Lesser General Public License (LGPL).
+ .
+ Avahi is a system which enables programs to publish and discover services
+ and hosts running on a local network. For example, a user can plug their
+ computer into a network and have Avahi automatically advertise the network
+ services running on the machine which could enable access
+ to files and printers.
+ .
+ This Package creates a service for avahi for mangoES systems.
+ It also has a init script to start it when the mangoES is starting.
+ .
+ Feel free to use one of your faviorite avahi clients to scan for the
+ service after installed
